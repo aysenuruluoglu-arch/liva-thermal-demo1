@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Liva Thermal Hotel | Oda Detayı</title>
+  <style>
+    :root{
+      --bg:#f6f3ee;
+      --card:#ffffff;
+      --text:#1f2a2a;
+      --muted:#687575;
+      --accent:#2f6f68;
+      --accent2:#d9b36c;
+      --line:#e5e2dc;
+      --shadow:0 12px 40px rgba(31,42,42,.08);
+      --radius:22px;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--text)}
+    a{text-decoration:none;color:inherit}
+    .topbar{background:#173f3b;color:#fff;padding:12px 20px;text-align:center;font-size:14px}
+    .wrap{max-width:1120px;margin:0 auto;padding:24px}
+    .nav{display:flex;justify-content:space-between;align-items:center;padding:8px 0 22px}
+    .brand{font-weight:800;font-size:22px;letter-spacing:.2px}
+    .brand small{display:block;font-size:11px;font-weight:600;color:var(--muted);margin-top:3px}
+    .tag{padding:9px 12px;border:1px solid var(--line);border-radius:999px;background:#fff;font-size:13px}
+    .hero{display:grid;grid-template-columns:1.3fr .7fr;gap:24px;align-items:stretch}
+    .photo{min-height:420px;border-radius:28px;overflow:hidden;position:relative;background:linear-gradient(135deg,#cad8d2 0%,#f1e1c0 55%,#9bb9b1 100%);box-shadow:var(--shadow)}
+    .photo:before,.photo:after{content:"";position:absolute;border-radius:50%;filter:blur(1px)}
+    .photo:before{width:240px;height:240px;background:rgba(255,255,255,.5);right:40px;top:45px}
+    .photo:after{width:340px;height:150px;background:rgba(47,111,104,.22);left:-60px;bottom:25px;border-radius:80px}
+    .photo-label{position:absolute;left:26px;bottom:26px;background:rgba(255,255,255,.9);backdrop-filter:blur(8px);padding:14px 16px;border-radius:16px;font-weight:700;box-shadow:0 8px 24px rgba(0,0,0,.08)}
+    .side{background:var(--card);border:1px solid var(--line);border-radius:28px;padding:28px;box-shadow:var(--shadow);display:flex;flex-direction:column;justify-content:space-between}
+    h1{font-size:36px;line-height:1.05;margin:0 0 8px}
+    .sub{color:var(--muted);margin-bottom:20px}
+    .price{font-size:34px;font-weight:800;margin:18px 0 4px}
+    .price small{font-size:14px;color:var(--muted);font-weight:600}
+    .btn{display:block;text-align:center;background:var(--accent);color:#fff;padding:15px 18px;border-radius:14px;font-weight:800;margin-top:18px}
+    .btn.secondary{background:#fff;color:var(--accent);border:1px solid var(--accent)}
+    .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:24px 0}
+    .info{background:#fff;border:1px solid var(--line);border-radius:18px;padding:16px}
+    .info b{display:block;font-size:13px;color:var(--muted);margin-bottom:5px}
+    .section{background:#fff;border:1px solid var(--line);border-radius:24px;padding:24px;margin-top:18px;box-shadow:0 8px 28px rgba(31,42,42,.04)}
+    .section h2{margin:0 0 14px;font-size:21px}
+    .features{display:grid;grid-template-columns:repeat(2,1fr);gap:10px 18px}
+    .feature{padding:10px 0;border-bottom:1px dashed var(--line)}
+    .note{font-size:13px;color:var(--muted);margin-top:10px}
+    .test{display:inline-block;margin-top:12px;background:#fff6df;border:1px solid #ecd7a6;color:#7a5b16;padding:8px 10px;border-radius:10px;font-size:12px;font-weight:700}
+    footer{padding:34px 0;color:var(--muted);font-size:13px;text-align:center}
+    @media(max-width:850px){.hero{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,1fr)}.photo{min-height:300px}}
+    @media(max-width:520px){.wrap{padding:16px}.grid{grid-template-columns:1fr}.features{grid-template-columns:1fr}h1{font-size:30px}.side{padding:22px}}
+  </style>
+</head>
+<body>
+  <div class="topbar">Demo rezervasyon sayfası — gerçek ödeme alınmaz.</div>
+  <div class="wrap">
+    <div class="nav">
+      <div class="brand">Liva Thermal Hotel<small>Sapanca • Termal Konaklama</small></div>
+      <div class="tag">5★ Termal Otel</div>
+    </div>
+
+    <div class="hero">
+      <div class="photo">
+        <div class="photo-label">Oda fotoğrafı alanı<br><span style="font-weight:500;color:#687575">Daha sonra gerçek görsellerle değiştirilebilir</span></div>
+      </div>
+
+      <div class="side">
+        <div>
+          <div class="tag" style="display:inline-block;margin-bottom:14px">Size uygun seçenek</div>
+          <h1 id="roomName">Standart Oda</h1>
+          <div class="sub">Konforlu konaklama • Yarım pansiyon • Termal SPA erişimi</div>
+          <div class="price"><span id="price">15.000 TL</span> <small>/ toplam</small></div>
+          <div class="note">Toplam tutar seçilen tarih ve kişi bilgilerine göre gösterilir.</div>
+          <div class="test">TEST MODU</div>
+        </div>
+        <div>
+          <a class="btn" id="payBtn" href="#">Ödemeye Geç (Test)</a>
+          <a class="btn secondary" href="#details">Oda Detaylarını İncele</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid">
+      <div class="info"><b>Giriş</b><span id="checkin">10 Eylül 2026</span></div>
+      <div class="info"><b>Çıkış</b><span id="checkout">13 Eylül 2026</span></div>
+      <div class="info"><b>Misafir</b><span id="guests">2 yetişkin + 1 çocuk</span></div>
+      <div class="info"><b>Konsept</b><span>Yarım pansiyon</span></div>
+    </div>
+
+    <div class="section" id="details">
+      <h2>Oda ve konaklama detayları</h2>
+      <div class="features">
+        <div class="feature">✓ Maksimum 2 yetişkin + 1 çocuk</div>
+        <div class="feature">✓ Kahvaltı dahil</div>
+        <div class="feature">✓ Akşam yemeği dahil</div>
+        <div class="feature">✓ Ücretsiz Wi‑Fi</div>
+        <div class="feature">✓ Ücretsiz otopark</div>
+        <div class="feature">✓ Termal SPA merkezi</div>
+      </div>
+      <p class="note">Bu sayfa yalnızca otomasyon testi için hazırlanmıştır. Gerçek rezervasyon veya ödeme işlemi yapılmaz.</p>
+    </div>
+
+    <div class="section">
+      <h2>Dinamik link testi</h2>
+      <p class="note">n8n daha sonra bu sayfaya tarih, kişi sayısı, oda adı ve toplam fiyatı URL üzerinden gönderebilir. Örnek:</p>
+      <code style="display:block;white-space:normal;background:#f5f5f2;padding:14px;border-radius:12px;line-height:1.5">?room=Standart%20Oda&checkin=2026-09-10&checkout=2026-09-13&adults=2&childAge=7&price=15000</code>
+    </div>
+
+    <footer>Liva Thermal Hotel Demo • Otomasyon testi</footer>
+  </div>
+
+  <script>
+    const p = new URLSearchParams(location.search);
+    const fmtDate = (s) => {
+      if(!s) return null;
+      const d = new Date(s + 'T00:00:00');
+      if(Number.isNaN(d.getTime())) return s;
+      return new Intl.DateTimeFormat('tr-TR',{day:'numeric',month:'long',year:'numeric'}).format(d);
+    };
+    const money = (v) => {
+      const n = Number(v);
+      if(Number.isNaN(n)) return v;
+      return new Intl.NumberFormat('tr-TR').format(n) + ' TL';
+    };
+
+    if(p.get('room')) document.getElementById('roomName').textContent = p.get('room');
+    if(p.get('checkin')) document.getElementById('checkin').textContent = fmtDate(p.get('checkin'));
+    if(p.get('checkout')) document.getElementById('checkout').textContent = fmtDate(p.get('checkout'));
+    if(p.get('price')) document.getElementById('price').textContent = money(p.get('price'));
+
+    const adults = p.get('adults');
+    const childAge = p.get('childAge');
+    if(adults || childAge){
+      let g = [];
+      if(adults) g.push(`${adults} yetişkin`);
+      if(childAge) g.push(`1 çocuk (${childAge} yaş)`);
+      document.getElementById('guests').textContent = g.join(' + ');
+    }
+
+    document.getElementById('payBtn').addEventListener('click', (e) => {
+      e.preventDefault();
+      alert('Bu buton test amaçlıdır. Gerçek ödeme alınmaz.');
+    });
+  </script>
+</body>
+</html>
